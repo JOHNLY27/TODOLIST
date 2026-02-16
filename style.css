@@ -1,0 +1,213 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+/* ===== BACKGROUND ===== */
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #c7d2fe, #fbcfe8, #bbf7d0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== MAIN APP CARD ===== */
+.neo {
+    width: 440px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* ===== TITLE ===== */
+.neo h1 {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(90deg, #6366f1, #ec4899, #facc15, #22c55e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300% 300%;
+    animation: gradientText 4s ease infinite;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+}
+
+@keyframes gradientText {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===== SUBTITLE ===== */
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeSlide 1.5s forwards 0.5s;
+}
+
+@keyframes fadeSlide {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== INPUT AREA ===== */
+.input-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 14px;
+    border-radius: 14px;
+    border: 2px solid #e0e7ff;
+    font-size: 15px;
+    font-weight: 500;
+    color: #374151;
+    background: #f8fafc;
+    transition: all 0.2s ease;
+}
+
+.input-area input:focus {
+    outline: none;
+    border-color: #818cf8;
+    background: #ffffff;
+}
+
+/* ADD BUTTON */
+.input-area button {
+    padding: 14px 18px;
+    border-radius: 14px;
+    border: none;
+    background: linear-gradient(135deg, #6366f1, #ec4899);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.input-area button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(99,102,241,0.3);
+}
+
+/* ===== TASK COUNTER ===== */
+.task-count {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* ===== TASK LIST ===== */
+ul {
+    list-style: none;
+}
+
+/* ===== TASK ITEM ===== */
+li {
+    background: linear-gradient(to right, #f8fafc, #ffffff);
+    border: 1px solid #e5e7eb;
+    padding: 14px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    transition: all 0.2s ease;
+    animation: slideIn 0.3s ease;
+}
+
+li:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+/* Checkbox */
+li input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #6366f1;
+}
+
+/* Task text */
+li span {
+    flex: 1;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1f2937;
+}
+
+/* Completed */
+.completed {
+    text-decoration: line-through;
+    color: #9ca3af;
+    font-weight: 400;
+}
+
+/* ===== BUTTONS ===== */
+
+/* LIKE BUTTON */
+.like-btn {
+    background: #fef3c7;
+    color: #d97706;
+    border-radius: 8px;
+    font-weight: 600;
+}
+.like-btn:hover {
+    background: #fde68a;
+}
+
+/* EDIT BUTTON */
+.edit-btn {
+    background: #e0f2fe;
+    color: #0369a1;
+    border-radius: 8px;
+    font-weight: 600;
+}
+.edit-btn:hover {
+    background: #bae6fd;
+}
+
+/* DELETE BUTTON */
+.delete {
+    background: #fee2e2;
+    color: #b91c1c;
+    border-radius: 8px;
+    font-weight: 600;
+}
+.delete:hover {
+    background: #fecaca;
+}
+
+/* ===== LIKED TASK ===== */
+.liked-task {
+    background: linear-gradient(to right, #fff7ed, #fffbeb);
+    border-color: #fde68a;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 480px) {
+    .neo {
+        width: 90%;
+    }
+}
